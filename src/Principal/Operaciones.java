@@ -32,7 +32,7 @@ public class Operaciones {
      */
     public Racional resta(Racional rac1, Racional rac2){
         Racional rac= new Racional();
-        if(rac1.getB()==rac2.getB()){
+        if(rac1.getB()== rac2.getB()){
             rac.setA(rac1.getA()-rac2.getA());
             rac.setB(rac1.getB());
         }else{
@@ -81,7 +81,7 @@ public class Operaciones {
      * @param rac objeto con  variables que tiene los valores del numero y del denominador deuna fraccion.
      * @return Objeto de tipo raccional con atrivutos equivalentes a los valores de la fraccion simplifficada
      */
-    private Racional simplificar(Racional rac) {
+    public Racional simplificar(Racional rac) {
         int n = mcd(rac.getA(),rac.getB()); //se calcula el mcd de la fracción
         rac.setA( rac.getA() / n);
         rac.setB( rac.getB() / n);

@@ -215,6 +215,32 @@ public class RacionalTest {
         assertEquals(3.00/7.00,racional.getValor(),0);
     }
     
+    @Test
+    public void sumarInversos(){
+        Operaciones operaciones =new  Operaciones();
+        Racional racional1= new Racional (3,2);
+        Racional racional2= new Racional (5,2);
+        Racional esperado= (operaciones.suma(racional1, racional2)).Invertir();
+        assertEquals(1,esperado.getA() );
+        assertEquals(4,esperado.getB() );    
+    }
+    @Test
+    public void multiplicaInversos(){
+        Operaciones operaciones =new  Operaciones();
+        Racional racional1= new Racional (1,3);
+        Racional racional2= new Racional (6,2);
+        Racional esperado= operaciones.simplificar(operaciones.multiplica(racional1, racional2.Invertir()));
+        assertEquals(1,esperado.getA() );
+        assertEquals(9,esperado.getB() );    
+    }
+    @Test(expected = ArithmeticException.class)
+    public void ErrorInversos(){
+        Operaciones operaciones =new  Operaciones();
+        Racional racional1= new Racional (3,2);
+        Racional racional2= new Racional (15,10);
+        Racional esperado= (operaciones.resta(racional1, racional2)).Invertir();
+    }
+    
     
     
 

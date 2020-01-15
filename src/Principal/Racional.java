@@ -94,4 +94,8 @@ public class Racional {
     public double getValor(){
         return Double.valueOf(this.getA()) / Double.valueOf(this.getB());     
     }
+    
+    public Racional Invertir(){
+        return new Racional(this.b,this.a);
+    }
 }
